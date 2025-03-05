@@ -1,0 +1,31 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class RandomGuessMatchWithMethods {
+    public static void main(String[] args) {
+        final int MIN = 1;
+        final int MAX = 10;
+        
+        Random random = new Random();
+        int randomValue = random.nextInt(MAX - MIN + 1) + MIN; // Generate a random number between MIN and MAX
+        
+        int userGuess = getUserGuess(MIN, MAX);
+        boolean isCorrect = (userGuess == randomValue);
+        
+        displayResults(randomValue, userGuess, isCorrect);
+    }
+    
+    public static int getUserGuess(int min, int max) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Guess a number between " + min + " and " + max + ": ");
+        int guess = scanner.nextInt();
+        return guess;
+    }
+    
+    public static void displayResults(int randomValue, int userGuess, boolean isCorrect) {
+        System.out.println("Random Number: " + randomValue);
+        System.out.println("Your Guess: " + userGuess);
+        System.out.println("Correct Guess? " + isCorrect);
+        System.out.println("Difference: " + Math.abs(randomValue - userGuess));
+    }
+}
