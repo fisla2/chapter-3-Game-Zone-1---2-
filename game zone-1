@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class MadLibWithMethod {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Asking the user for input words
+        System.out.print("Enter an animal: ");
+        String animal = scanner.nextLine();
+        
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        
+        System.out.print("Enter a direction: ");
+        String direction = scanner.nextLine();
+        
+        System.out.print("Enter a place: ");
+        String place = scanner.nextLine();
+        
+        System.out.print("Enter a verb: ");
+        String verb = scanner.nextLine();
+        
+        // Calling the method to display the story
+        displayStory(animal, number, direction, place, verb);
+        
+        scanner.close();
+    }
+    
+    // Method to display the Mad Lib story
+    public static void displayStory(String animal, int number, String direction, String place, String verb) {
+        System.out.println("\nHere is your Mad Lib story:");
+        System.out.println("Once upon a time, there was a " + animal + " who found " + number + " magical stones.");
+        System.out.println("The stones led the " + animal + " " + direction + " towards " + place + ".");
+        System.out.println("Excited, the " + animal + " decided to " + verb + " all the way there!");
+        System.out.println("And they lived happily ever after.");
+    }
+}
